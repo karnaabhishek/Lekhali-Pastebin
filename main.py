@@ -10,7 +10,7 @@ def parser():
     'page': 1,
     'title': encoded_title
     }
-
+    results = {}
     is_empty = os.stat("annapurna_news.json").st_size == 0
     if(is_empty):
         page = 1
@@ -23,10 +23,6 @@ def parser():
             page = data_keys_last + 1
             params['page'] = page
             results = data
-
-
-    results = {}
-
     temp_page = page
     while(page<=temp_page+2):
         count=0
